@@ -1,0 +1,6 @@
+syslog-ng (0.0-0) UNRELEASED; urgency=medium
+
+  * Monolithic packaging for syslog-ng.
+
+ -- Vincent Bernat <bernat@debian.org>  Wed, 04 Feb 2015 09:02:41 +0100
+
