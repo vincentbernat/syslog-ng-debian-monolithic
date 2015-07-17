@@ -28,6 +28,14 @@ override_dh_auto_configure:
 override_dh_strip:
 	dh_strip --dbg-package=syslog-ng-dbg
 
+override_dh_installinit:
+	dh_installinit --name syslog-ng --restart-after-upgrade
+override_dh_installlogrotate:
+	dh_installlogrotate --name syslog-ng
+override_dh_installlogcheck:
+	dh_installlogcheck --name syslog-ng
+
+
 ifneq (,$(filter syslog-ng-core,$(shell dh_listpackages)))
 override_dh_makeshlibs:
 	dh_makeshlibs -V "syslog-ng-core (>= ${ABI_VERSION_LOW}~), syslog-ng-core (<< ${ABI_VERSION_HIGH}~)" \
